@@ -1,42 +1,30 @@
 # Gunes-Sstem-Yorunge-simulasyn-Unity-Grupno24
-unity içinde GüneşSistemiYörünge simülasonu csharp kodu ile formule dayalı oluşturma ve gözlemleme. Grupno24
-github destopla unity içindeki proje dosyaları yüklenmiştir
+unity içinde GüneşSistemiYörünge simülasonu csharp kodu ile formule dayalı oluşturma ve gözlemleme. Grupno24.
+github destopla unity içindeki proje dosyaları yüklenmiştir.
 temel c sharp kodu:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Orbitters : MonoBehaviour {      
 public int sphereCount = 500;
 public int maxRadius = 200; 
 public GameObject [] spheres;
 public Material [] mats; 
 public Material trailMat;
-
-
 void Awake () {
 spheres = new GameObject[sphereCount]; 
-
 }          
-
 void Start() {
-
 spheres = CreateSpheres(sphereCount , maxRadius);  
-
 }      
-
 public GameObject [] CreateSpheres ( int count , int radius) 
-
 {
-
 var sphs=  new GameObject[count];
 var sphereToCopy =  GameObject.CreatePrimitive (PrimitiveType.Sphere);      
-
 Rigidbody rb =  sphereToCopy.AddComponent<Rigidbody>();
 rb.useGravity = false;    
 for (int i=0;  i < count;  i++)        
      {  
-   
       var sp = GameObject. Instantiate( sphereToCopy ); 
       sp.transform.position  =  this.transform.position  +  
 
